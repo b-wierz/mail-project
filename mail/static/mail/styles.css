@@ -1,0 +1,26 @@
+textarea {
+    min-height: 400px;
+}
+
+#emails-view {
+    display: flex;
+    flex-wrap: wrap;
+    /*gap: 1rem; */
+}
+
+.mailbox-view {
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#single-line {
+  overflow: hidden;         /* Hides content that overflows the element's box */
+  white-space: nowrap;      /* Prevents text from wrapping to the next line */
+  text-overflow: ellipsis;  /* Displays an ellipsis (...) to represent clipped text */
+}
+
+.mailbox-view:hover {
+    background-color: lightblue !important;
+}
