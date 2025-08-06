@@ -126,14 +126,9 @@ function displayInbox(emails) {
     const subjectElement = document.createElement('p');
     subjectElement.textContent = 'Subject: ' + email.subject;
 
-    //const bodyElement = document.createElement('p');
-    //bodyElement.id = 'single-line'
-    //bodyElement.textContent = email.body;
-
     emailDiv.appendChild(timeElement);
     emailDiv.appendChild(senderElement);
     emailDiv.appendChild(subjectElement);
-    //emailDiv.appendChild(bodyElement);
     inboxContainer.appendChild(emailDiv);
 
   });
@@ -247,8 +242,7 @@ function displayEmail(email) {
       body: JSON.stringify({
         read: true    
       })
-    })
-    //email.archived = true; 
+    }) 
     email.read = true;
   };
 
@@ -284,14 +278,6 @@ function displayEmail(email) {
         })
       })
       .then(() => load_mailbox('inbox'));
-      //.then(emails => {
-      //  email.archived = true
-      //  fetch('/emails/inbox')
-      //  .then(response => response.json())
-      //  .then(emails => {
-      //    displayInbox(emails);
-      //  })
-      //})
 
     } else {  // If archived: true
       fetch(`/emails/${email.id}`, {
@@ -301,14 +287,6 @@ function displayEmail(email) {
         })
       })
       .then(() => load_mailbox('inbox'));
-      //.then(emails => {
-      //  email.archived = false
-      //  fetch('/emails/inbox')
-      //  .then(response => response.json())
-      //  .then(emails => {
-      //    displayInbox(emails);
-      //  })
-      //}); 
     };
   });
 
